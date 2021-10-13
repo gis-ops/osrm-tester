@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "osrm_tester"
+version = "0.1.0"
+description = "Test OSRM"
+authors = ["Christian Beiwinkel <christian@gis-ops.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+haversine = "^2.5.1"
+Cython = "^0.29.24"
+click = "^8.0.3"
+requests = "^2.26.0"
+
+[tool.poetry.dev-dependencies]
+black = "^21.9b0"
+flake8 = "^4.0.1"
+pre-commit = "^2.15.0"
+
+[tool.poetry.scripts]
+osrm_tester = "osrm_tester.osrm_tester:main"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 95
+exclude = '''
+/(
+    \.git
+  | \.venv
+)/
+'''

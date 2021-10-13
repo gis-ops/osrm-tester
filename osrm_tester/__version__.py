@@ -1,0 +1,6 @@
+__version__ = "0.0.1"
+__description__ = "Tests OSRM"
+__author__ = "Christian Beiwinkel"
+__author_email__ = "christian@gis-ops.com"
+__url__ = ""
+__title__ = "osrm_tester"
