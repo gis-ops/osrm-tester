@@ -25,6 +25,8 @@ cd osrm_tester
 poetry install [--no-dev]
 ```
 
+Make sure to either install [`pyosrm`](https://github.com/enricodvn/pyosrm) manually or add it via pip/poetry.
+
 ## Usage
 
 After installation, `osrm_tester --help` can be called from the commandline as executable:
