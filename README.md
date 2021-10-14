@@ -113,6 +113,9 @@ Options:
                         [host].
   -r, --report          Flag to report the distance average of the
                         routes/matrices.
+  -A, --algorithm TEXT  The algorithm that will be used for routing. Only when
+                        using bindings. Default: CH NOTE: This argument is
+                        mutually exclusive with  arguments: [host].
   --help                Show this message and exit.
 ```
 

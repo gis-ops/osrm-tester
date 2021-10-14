@@ -78,7 +78,16 @@ def main(ctx: click.Context, action: str, cores: int, version: str) -> None:
     default=False,
     help="Flag to report the distance average of the routes/matrices.",
 )
-@click.option("--algorithm", "-A", type=click.STRING, default=Defaults.ALGORITHM)
+@click.option(
+    "--algorithm",
+    "-A",
+    cls=MutuallyExclusiveOption,
+    type=click.STRING,
+    default=Defaults.ALGORITHM,
+    help=f"The algorithm that will be used for routing. Only when using bindings. "
+    f"Default: {Defaults.ALGORITHM}",
+    mutually_exclusive=["host"],
+)
 @click.pass_context
 def test(
     ctx,
