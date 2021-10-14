@@ -10,6 +10,7 @@ haversine = "^2.5.1"
 Cython = "^0.29.24"
 click = "^8.0.3"
 requests = "^2.26.0"
+pyosrm = "^0.0.2"
 
 [tool.poetry.dev-dependencies]
 black = "^21.9b0"

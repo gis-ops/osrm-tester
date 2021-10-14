@@ -228,6 +228,14 @@ optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
 [[package]]
+name = "pyosrm"
+version = "0.0.2"
+description = "Cython wrapper of osrm-backend to be used in Python"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "pyyaml"
 version = "5.4.1"
 description = "YAML parser and emitter for Python"
@@ -328,7 +336,7 @@ testing = ["coverage (>=4)", "coverage-enable-subprocess (>=1)", "flaky (>=3)", 
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "3e580c162a3d76c3b551e12b6efe31a0010975e16e020b411ec9a61f3d785b15"
+content-hash = "1d64fa017d46fb1c899fbbb030f1336c9dc4707c4d23d0ed0d42fd9734bbfebc"
 
 [metadata.files]
 "backports.entry-points-selectable" = [
@@ -455,6 +463,12 @@ pycodestyle = [
 pyflakes = [
     {file = "pyflakes-2.4.0-py2.py3-none-any.whl", hash = "sha256:3bb3a3f256f4b7968c9c788781e4ff07dce46bdf12339dcda61053375426ee2e"},
     {file = "pyflakes-2.4.0.tar.gz", hash = "sha256:05a85c2872edf37a4ed30b0cce2f6093e1d0581f8c19d7393122da7e25b2b24c"},
+]
+pyosrm = [
+    {file = "pyosrm-0.0.2-cp35-cp35m-manylinux2014_x86_64.whl", hash = "sha256:96731f5137f2d91d95cb13e44a4029d2579b8f21b53bcd36646bf52fdd06dc53"},
+    {file = "pyosrm-0.0.2-cp36-cp36m-manylinux2014_x86_64.whl", hash = "sha256:c87ad1d329e2638b54160eda1ac42aabff8474d54b4db16c9e75e0e606c6ebd5"},
+    {file = "pyosrm-0.0.2-cp37-cp37m-manylinux2014_x86_64.whl", hash = "sha256:ad963773c30d41a18cbde464c877f5db4ccb27c6975597b66edb2bb8d12ccdb8"},
+    {file = "pyosrm-0.0.2-cp38-cp38-manylinux2014_x86_64.whl", hash = "sha256:d4e5c306dcd17cd168f942cd8f45a4862b1ae0fb85abc3ff3668bfaafc09a53d"},
 ]
 pyyaml = [
     {file = "PyYAML-5.4.1-cp27-cp27m-macosx_10_9_x86_64.whl", hash = "sha256:3b2b1824fe7112845700f815ff6a489360226a5609b96ec2190a45e62a9fc922"},
