@@ -37,7 +37,7 @@ def init(a: str, h: str, c: str, r: bool, A: str, lock: Lock) -> None:
     if c:
         lock.acquire()
         try:
-            router = PyOSRM(c, use_shared_memory=False, algorithm="MLD")
+            router = PyOSRM(c, use_shared_memory=False, algorithm=algorithm)
             LOGGER.debug("Router instantiated")
         finally:
             lock.release()
@@ -54,9 +54,7 @@ def work(params) -> Union[None, float]:
             )
             route = requests.get(f"{host}/{path}/v1/driving/{params_str}")
         else:
-            route = (
-                router.route(params, algorithm=algorithm) if action == "route" else None
-            )
+            route = router.route(params) if action == "route" else None
     except (RuntimeError, requests.exceptions.BaseHTTPError):
         return None
 
