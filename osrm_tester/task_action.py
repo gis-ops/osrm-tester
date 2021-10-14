@@ -1,6 +1,7 @@
 from multiprocessing import Lock
 from statistics import mean
 from typing import Optional, Union
+from random import random
 
 import pyosrm
 import requests
@@ -34,6 +35,7 @@ def init(a: str, h: str, c: str, r: bool, lock: Lock) -> None:
         lock.acquire()
         try:
             router = PyOSRM(c, use_shared_memory=False, algorithm="MLD")
+            LOGGER.debug("Router instantiated")
         finally:
             lock.release()
 
@@ -52,6 +54,11 @@ def work(params) -> Union[None, float]:
             route = router.route(params) if action == "route" else None
     except (RuntimeError, requests.exceptions.BaseHTTPError):
         return None
+
+    if (
+        random() > 0.95
+    ):  # assume that large number of routes will be tested, only print sample in debug mode
+        LOGGER.debug(f"Calculated route between {params[0]} and {params[1]}")
 
     if report:
         result = route.json()
