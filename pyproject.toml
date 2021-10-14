@@ -5,7 +5,7 @@ description = "Test OSRM"
 authors = ["Christian Beiwinkel <christian@gis-ops.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.8"
 haversine = "^2.5.1"
 Cython = "^0.29.24"
 click = "^8.0.3"
