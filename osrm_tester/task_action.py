@@ -20,13 +20,16 @@ host: Optional[str] = None
 action: Optional[str] = None
 report: Optional[bool] = None
 router: Optional[pyosrm.PyOSRM] = None
+algorithm: Optional[str] = None
 
 
-def init(a: str, h: str, c: str, r: bool, lock: Lock) -> None:
+def init(a: str, h: str, c: str, r: bool, A: str, lock: Lock) -> None:
     """Initialize each process with its own OSRM file"""
-    global host, action, report, router
+    global host, action, report, router, algorithm
 
     action = a
+    algorithm = A
+
     if r:
         report = r
     if h:
@@ -51,7 +54,9 @@ def work(params) -> Union[None, float]:
             )
             route = requests.get(f"{host}/{path}/v1/driving/{params_str}")
         else:
-            route = router.route(params) if action == "route" else None
+            route = (
+                router.route(params, algorithm=algorithm) if action == "route" else None
+            )
     except (RuntimeError, requests.exceptions.BaseHTTPError):
         return None
 

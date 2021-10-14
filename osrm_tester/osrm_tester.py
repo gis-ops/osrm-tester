@@ -78,9 +78,16 @@ def main(ctx: click.Context, action: str, cores: int, version: str) -> None:
     default=False,
     help="Flag to report the distance average of the routes/matrices.",
 )
+@click.option("--algorithm", "-A", type=click.STRING, default=Defaults.ALGORITHM)
 @click.pass_context
 def test(
-    ctx, verbosity: int, file: TextIOWrapper, host: str, osrm_file: str, report: bool
+    ctx,
+    verbosity: int,
+    file: TextIOWrapper,
+    host: str,
+    osrm_file: str,
+    report: bool,
+    algorithm: str,
 ) -> None:
     """
     Executes the test either via HTTP ("host" option) or Python bindings.
