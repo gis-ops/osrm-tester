@@ -126,7 +126,7 @@ def test(
     # lock to open the OSRM file if necessary
     lock = mp.Lock()
     with mp.Pool(
-        cores, task_action.init, [action, host, osrm_file, report, lock]
+        cores, task_action.init, [action, host, osrm_file, report, algorithm, lock]
     ) as pool:
         start = time.time()
         results = list(
